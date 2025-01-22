@@ -1,0 +1,106 @@
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>学習記録フォーム</title>
+		<link rel="stylesheet" href="path/to/tailwind.css" />
+		<script type="module" defer>
+			// Achievement オブジェクトをインポート
+			import Achievement from '../types/entities.ts';
+
+			// Achievement オブジェクトの初期値
+			const achievementData = { ...Achievement };
+
+			// フォーム送信時の処理
+			// DOMを生成した時(フォームがロードされた時)指定した関数を実行する ()
+			document.addEventListener('DOMContentLoaded', () => {
+				// 最初の<form>タグの値をクエリして取得
+				const form = document.querySelector('form');
+
+				form.addEventListener('submit', (event) => {
+					event.preventDefault(); // デフォルトのフォーム送信を防止
+
+					// フォームの各値を取得して Achievement オブジェクトにセット
+					achievementData.student_search =
+						document.getElementById('student_search').value;
+					achievementData.date = document.getElementById('date').value;
+					achievementData.start_time =
+						document.getElementById('start_time').value;
+					achievementData.end_time = document.getElementById('end_time').value;
+
+					// 結果をコンソールに出力 (必要に応じて API 呼び出しなどを追加)
+					console.log('Updated Achievement Data:', achievementData);
+				});
+			});
+		</script></head
+	>
+
+	<div class="w-full max-w-7xl mx-auto bg-white shadow-md rounded-lg p-6">
+		<div class="text-center mb-6">
+			<h1 class="text-2xl font-bold">学習記録フォーム</h1>
+		</div>
+		<form class="space-y-6">
+			<div class="space-y-4">
+				<!-- 生徒検索 -->
+				<div class="space-y-2">
+					<label for="student_search" class="block text-sm font-medium"
+						>生徒検索</label
+					>
+					<input
+						type="text"
+						id="student_search"
+						name="student_search"
+						class="w-full border border-gray-300 rounded-lg p-2"
+						placeholder="生徒名を入力"
+					/>
+				</div>
+				<div id="search_results" class="space-y-2">
+					<!-- 検索結果をここに表示 -->
+				</div>
+				<!-- 日付選択 -->
+				<div class="space-y-2">
+					<label for="date" class="block text-sm font-medium">日付</label>
+					<input
+						type="date"
+						id="date"
+						name="date"
+						class="w-full border border-gray-300 rounded-lg p-2"
+					/>
+				</div>
+				<!-- 開始時間 -->
+				<div class="space-y-2">
+					<label for="start_time" class="block text-sm font-medium"
+						>開始時間</label
+					>
+					<select
+						id="start_time"
+						name="start_time"
+						class="w-full border border-gray-300 rounded-lg p-2"
+					>
+						<!-- 時間選択肢をここに挿入 -->
+					</select>
+				</div>
+				<!-- 終了時間 -->
+				<div class="space-y-2">
+					<label for="end_time" class="block text-sm font-medium"
+						>終了時間</label
+					>
+					<select
+						id="end_time"
+						name="end_time"
+						class="w-full border border-gray-300 rounded-lg p-2"
+					>
+						<!-- 時間選択肢をここに挿入 -->
+					</select>
+				</div>
+			</div>
+			<button
+				type="submit"
+				class="w-full bg-blue-600 text-white rounded-lg py-2 font-medium"
+				>更新</button
+			>
+		</form>
+	</div>
+
+
+</html>
