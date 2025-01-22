@@ -2,7 +2,7 @@
 /* http://localhost:2121/playground/kitchen-sink/ */
 
 import LayoutSidebar from '../../app/LayoutSidebar.astro';
-import CrudUsers from '../../modules/CrudUsers.astro';
+import StudentsList from '../../modules/StudentsList.astro';
 import CrudProducts from '../../modules/CrudProducts.astro';
 ---
 
@@ -10,7 +10,7 @@ import CrudProducts from '../../modules/CrudProducts.astro';
 	<!-- UserのリストをAPIから取得するコンポーネント -->
 
 	<section>
-		<CrudUsers class="p-4 lg:p-16" />
+		<StudentsList class="p-4 lg:p-16" />
 	</section>
 
 	<!-- プロダクトのリストをAPIから取得するコンポーネントCrudProducts -->
