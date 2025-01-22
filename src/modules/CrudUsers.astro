@@ -12,11 +12,13 @@ const users = await fetchData('users');
 	type="users"
 	class:list={['block overflow-hidden shadow', clazz]}
 >
+	<!-- ページのヘッダー部分。パンくずリスト、ページタイトル、検索バー、アクションボタン の表示タグ-->
 	<div
 		class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700"
 	>
 		<div class="w-full mb-1">
 			<div class="mb-4">
+				<!-- "Breadcrumb"(パンクズりすと) -->
 				<nav class="flex mb-5" aria-label="Breadcrumb">
 					<ol
 						class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2"
@@ -77,6 +79,8 @@ const users = await fetchData('users');
 						</li>
 					</ol>
 				</nav>
+
+				<!-- ページタイトル -->
 				<h1
 					class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
 				>
@@ -87,6 +91,7 @@ const users = await fetchData('users');
 				<div
 					class="items-center hidden mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0 dark:divide-gray-700"
 				>
+					<!-- 検索バー -->
 					<form class="lg:pr-3" action="#" method="GET">
 						<label for="users-search" class="sr-only">Search</label>
 						<div class="relative mt-1 lg:w-64 xl:w-96">
