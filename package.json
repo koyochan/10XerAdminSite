@@ -42,6 +42,7 @@
 		"apexcharts": "^3.37.2",
 		"astro": "^5.1.8",
 		"firebase": "^11.2.0",
+		"firebase-admin": "^13.0.2",
 		"flowbite": "^2.1.1",
 		"flowbite-typography": "^1.0.3",
 		"shiki": "^0.14.1",
